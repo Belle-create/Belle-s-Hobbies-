@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Belle's Hobbies - Journal Covers</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f9f6f2; margin: 0; padding: 0; }
+    header { background: #2c180f; color: #f9f6f2; padding: 2rem; text-align: center; }
+    header h1 { font-size: 2.5rem; margin: 0; }
+    header p { font-size: 1.2rem; opacity: 0.9; margin-top: 0.5rem; }
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .journal-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .journal-card img { width: 100%; border-radius: 6px; margin-bottom: 1rem; }
+    .journal-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .price { color: #2c180f; font-size: 1.1rem; font-weight: bold; margin: 0.5rem 0; }
+    .form-group { margin: 1rem 0; }
+    .form-group label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
+    .form-group select, .form-group input { padding: 0.5rem; font-size: 1rem; width: 100%; max-width: 250px; border: 1px solid #ccc; border-radius: 4px; }
+    .submit-btn { background: #2c180f; color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; margin-top: 1rem; }
+    .submit-btn:hover { background: #3d2416; }
+    footer { text-align: center; padding: 2rem; color: #555; font-size: 0.9rem; }
+    .note { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Belle's Hobbies</h1>
+    <p>Louise-Carmen Inspired Journal Covers</p>
+  </header>
+
+  <main>
+    <h2>Journal Cover Gallery</h2>
+    
+    <form action="https://formsubmit.co/info.bellehanumuthoo@gmail.com" method="POST">
+      <div class="gallery">
+        
+        <!-- Journal 1 -->
+        <div class="journal-card">
+          <img src="https://via.placeholder.com/400x300/d4a574/ffffff?text=Tan+Leather+Journal" alt="Tan leather journal">
+          <h3>Tan leather with gold foil accent</h3>
+          
+          <div class="form-group">
+            <label>Size:</label>
+            <select name="journal1_size" required>
+              <option value="">Select size</option>
+              <option value="B6 - $60">B6 - $60</option>
+              <option value="A5 - $90">A5 - $90</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Grommet Color:</label>
+            <select name="journal1_grommet" required>
+              <option value="">Select color</option>
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold</option>
+              <option value="Bronze">Bronze</option>
+              <option value="Black">Black</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Add Charms ($5 each):</label>
+            <input type="number" name="journal1_charms" min="0" value="0" style="max-width: 100px;">
+          </div>
+          <p class="note">Charms: $5 each</p>
+        </div>
+
+        <!-- Journal 2 -->
+        <div class="journal-card">
+          <img src="https://via.placeholder.com/400x300/8b7355/ffffff?text=Vintage+Embossed" alt="Vintage journal">
+          <h3>Vintage-style cover with embossing</h3>
+          
+          <div class="form-group">
+            <label>Size:</label>
+            <select name="journal2_size" required>
+              <option value="">Select size</option>
+              <option value="B6 - $60">B6 - $60</option>
+              <option value="A5 - $90">A5 - $90</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Grommet Color:</label>
+            <select name="journal2_grommet" required>
+              <option value="">Select color</option>
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold</option>
+              <option value="Bronze">Bronze</option>
+              <option value="Black">Black</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Add Charms ($5 each):</label>
+            <input type="number" name="journal2_charms" min="0" value="0" style="max-width: 100px;">
+          </div>
+          <p class="note">Charms: $5 each</p>
+        </div>
+        
+      </div>
+      
+      <!-- Customer Info -->
+      <div style="background: white; border-radius: 8px; padding: 2rem; margin-top: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <h3>Your Information</h3>
+        <div class="form-group">
+          <label>Name:</label>
+          <input type="text" name="name" required style="max-width: 100%;">
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" required style="max-width: 100%;">
+        </div>
+        <div class="form-group">
+          <label>Additional Notes:</label>
+          <input type="text" name="notes" style="max-width: 100%;">
+        </div>
+        <button type="submit" class="submit-btn">Submit Order</button>
+      </div>
+    </form>
+    
+  </main>
+
+  <footer>
+    © 2026 Belle's Hobbies. All rights reserved.
+  </footer>
+</body>
+</html>
