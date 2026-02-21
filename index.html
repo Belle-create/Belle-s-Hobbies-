@@ -22,9 +22,9 @@
     .note { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 0.5rem; }
     .scattered-collage { position: relative; height: 180px; margin: 1.5rem auto; max-width: 500px; }
     .scattered-collage img { position: absolute; width: 110px; height: 130px; object-fit: cover; border: 4px solid white; box-shadow: 2px 4px 10px rgba(0,0,0,0.25); border-radius: 3px; }
-    .scattered-collage img:nth-child(1) { left: 5%;  top: 10px; transform: rotate(-6deg); }
+    .scattered-collage img:nth-child(1) { left: 5%; top: 10px; transform: rotate(-6deg); }
     .scattered-collage img:nth-child(2) { left: 25%; top: 25px; transform: rotate(4deg); z-index: 1; }
-    .scattered-collage img:nth-child(3) { left: 47%; top: 5px;  transform: rotate(-3deg); z-index: 2; }
+    .scattered-collage img:nth-child(3) { left: 47%; top: 5px; transform: rotate(-3deg); z-index: 2; }
     .scattered-collage img:nth-child(4) { left: 67%; top: 20px; transform: rotate(7deg); z-index: 1; }
   </style>
 </head>
@@ -35,35 +35,37 @@
   </header>
 
   <main>
-
-    <!-- TOP COLLAGE -->
+    <!-- Top scattered collage -->
     <div class="scattered-collage">
-      <img src="images/Cover1.jpeg" alt="Journal cover 1">
-      <img src="images/Cover2.jpeg" alt="Journal cover 2">
-      <img src="images/Cover%201-1.jpeg" alt="Journal cover 3">
-      <img src="images/IMG_8683.jpeg" alt="Journal cover 4">
+      <img src="images/1.jpg" alt="Journal cover sample 1">
+      <img src="images/2.jpg" alt="Journal cover sample 2">
+      <img src="images/3.jpg" alt="Journal cover sample 3">
+      <img src="images/1.jpg" alt="Journal cover sample 4">
     </div>
 
-    <h2>Journal Cover Gallery</h2>
+    <h2>Order Your Custom Journal Cover</h2>
 
     <form action="https://formsubmit.co/info.bellehanumuthoo@gmail.com" method="POST">
-      <div class="gallery">
+      <input type="hidden" name="_subject" value="New Journal Cover Order">
+      <input type="hidden" name="_captcha" value="false">
 
-        <!-- Journal 1 -->
+      <div class="gallery">
+        <!-- B6 Journal Card -->
         <div class="journal-card">
-          <h3>Tan leather</h3>
+          <h3>B6 Journal Cover</h3>
+          <p class="price">$50 + $3 charm (optional)</p>
+          <p class="note">Perfect for B6 size journals</p>
           <div class="form-group">
-            <label>Size:</label>
-            <select name="journal1_size" required>
-              <option value="">Select size</option>
-              <option value="B6 - $50">B6 - $50</option>
-              <option value="A5 - $80">A5 - $80</option>
+            <label>Size</label>
+            <select name="b6_size">
+              <option value="">-- Select --</option>
+              <option value="B6">B6</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Grommet Color:</label>
-            <select name="journal1_grommet" required>
-              <option value="">Select color</option>
+            <label>Grommet Colour</label>
+            <select name="b6_grommet">
+              <option value="">-- Select --</option>
               <option value="Silver">Silver</option>
               <option value="Gold">Gold</option>
               <option value="Bronze">Bronze</option>
@@ -71,49 +73,87 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Add Charms ($3 each):</label>
-            <input type="number" name="journal1_charms" min="0" value="0" style="max-width: 100px;">
+            <label>Add Charm? (+$3)</label>
+            <select name="b6_charm">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
           </div>
-          <p class="note">Charms: $3 each</p>
         </div>
 
+        <!-- A5 Journal Card -->
+        <div class="journal-card">
+          <h3>A5 Journal Cover</h3>
+          <p class="price">$80 + $3 charm (optional)</p>
+          <p class="note">Perfect for A5 size journals</p>
+          <div class="form-group">
+            <label>Size</label>
+            <select name="a5_size">
+              <option value="">-- Select --</option>
+              <option value="A5">A5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Grommet Colour</label>
+            <select name="a5_grommet">
+              <option value="">-- Select --</option>
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold</option>
+              <option value="Bronze">Bronze</option>
+              <option value="Black">Black</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Add Charm? (+$3)</label>
+            <select name="a5_charm">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <!-- Customer Info -->
-      <div style="background: white; border-radius: 8px; padding: 2rem; margin-top: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <h3>Your Information</h3>
+      <!-- Shared order details -->
+      <div class="journal-card" style="margin-top: 2rem;">
+        <h3>Your Details</h3>
         <div class="form-group">
-          <label>Name:</label>
-          <input type="text" name="name" required style="max-width: 100%;">
+          <label>Which journal(s) are you ordering?</label>
+          <label><input type="checkbox" name="order_b6" value="Yes"> B6 Journal Cover</label>
+          <label><input type="checkbox" name="order_a5" value="Yes"> A5 Journal Cover</label>
+          <label><input type="checkbox" name="order_both" value="Yes"> Both</label>
         </div>
         <div class="form-group">
-          <label>Email:</label>
-          <input type="email" name="email" required style="max-width: 100%;">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required>
         </div>
         <div class="form-group">
-          <label>Phone:</label>
-          <input type="tel" name="phone" required style="max-width: 100%;">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
-          <label>Additional Notes:</label>
-          <input type="text" name="notes" style="max-width: 100%;">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 0400 000 000">
+        </div>
+        <div class="form-group">
+          <label for="notes">Any special requests or notes?</label>
+          <input type="text" id="notes" name="notes" placeholder="Optional notes">
         </div>
         <button type="submit" class="submit-btn">Submit Order</button>
       </div>
-
-      <!-- BOTTOM COLLAGE -->
-      <div class="scattered-collage">
-        <img src="images/IMG_8683.jpeg" alt="Journal cover 4">
-        <img src="images/Cover%201-1.jpeg" alt="Journal cover 3">
-        <img src="images/Cover2.jpeg" alt="Journal cover 2">
-        <img src="images/Cover1.jpeg" alt="Journal cover 1">
-      </div>
-
     </form>
+
+    <!-- Bottom scattered collage -->
+    <div class="scattered-collage" style="margin-top: 3rem;">
+      <img src="images/2.jpg" alt="Journal cover sample">
+      <img src="images/3.jpg" alt="Journal cover sample">
+      <img src="images/1.jpg" alt="Journal cover sample">
+      <img src="images/2.jpg" alt="Journal cover sample">
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 Belle's Hobbies. All rights reserved.</p>
+    <p>&copy; 2025 Belle's Hobbies. All rights reserved.</p>
+    <p>Contact: info.bellehanumuthoo@gmail.com</p>
   </footer>
 </body>
 </html>
