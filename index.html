@@ -11,10 +11,6 @@
     h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .journal-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .journal-card img { width: 100%; border-radius: 6px; margin-bottom: 1re max-height: 150px; object-fit: cover;m; }
-
-            .image-collage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
-            .image-collage img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; }
     .journal-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
     .price { color: #2c180f; font-size: 1.1rem; font-weight: bold; margin: 0.5rem 0; }
     .form-group { margin: 1rem 0; }
@@ -24,6 +20,12 @@
     .submit-btn:hover { background: #3d2416; }
     footer { text-align: center; padding: 2rem; color: #555; font-size: 0.9rem; }
     .note { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 0.5rem; }
+    .scattered-collage { position: relative; height: 180px; margin: 1.5rem auto; max-width: 500px; }
+    .scattered-collage img { position: absolute; width: 110px; height: 130px; object-fit: cover; border: 4px solid white; box-shadow: 2px 4px 10px rgba(0,0,0,0.25); border-radius: 3px; }
+    .scattered-collage img:nth-child(1) { left: 5%;  top: 10px; transform: rotate(-6deg); }
+    .scattered-collage img:nth-child(2) { left: 25%; top: 25px; transform: rotate(4deg); z-index: 1; }
+    .scattered-collage img:nth-child(3) { left: 47%; top: 5px;  transform: rotate(-3deg); z-index: 2; }
+    .scattered-collage img:nth-child(4) { left: 67%; top: 20px; transform: rotate(7deg); z-index: 1; }
   </style>
 </head>
 <body>
@@ -33,21 +35,31 @@
   </header>
 
   <main>
+
+    <!-- TOP COLLAGE -->
+    <div class="scattered-collage">
+      <img src="images/Cover1.jpeg" alt="Journal cover 1">
+      <img src="images/Cover2.jpeg" alt="Journal cover 2">
+      <img src="images/Cover 1-1.jpeg" alt="Journal cover 3">
+      <img src="images/IMG_8683.jpeg" alt="Journal cover 4">
+    </div>
+
     <h2>Journal Cover Gallery</h2>
-    
+
     <form action="https://formsubmit.co/info.bellehanumuthoo@gmail.com" method="POST">
       <div class="gallery">
-        
+
         <!-- Journal 1 -->
         <div class="journal-card">
+          <h3>Tan leather</h3>
+          <div class="form-group">
             <label>Size:</label>
             <select name="journal1_size" required>
               <option value="">Select size</option>
-              <option value="B6 - $30">B6 - $30</option>
+              <option value="B6 - $50">B6 - $50</option>
               <option value="A5 - $80">A5 - $80</option>
             </select>
           </div>
-          
           <div class="form-group">
             <label>Grommet Color:</label>
             <select name="journal1_grommet" required>
@@ -58,16 +70,15 @@
               <option value="Black">Black</option>
             </select>
           </div>
-          
           <div class="form-group">
             <label>Add Charms ($3 each):</label>
             <input type="number" name="journal1_charms" min="0" value="0" style="max-width: 100px;">
           </div>
           <p class="note">Charms: $3 each</p>
         </div>
-        
+
       </div>
-      
+
       <!-- Customer Info -->
       <div style="background: white; border-radius: 8px; padding: 2rem; margin-top: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
         <h3>Your Information</h3>
@@ -79,23 +90,30 @@
           <label>Email:</label>
           <input type="email" name="email" required style="max-width: 100%;">
         </div>
-
-                    <div class="form-group">
-                                      <label>Phone:</label>
-                                      <input type="tel" name="phone" required style="max-width: 100%;">
-                                  </div>
+        <div class="form-group">
+          <label>Phone:</label>
+          <input type="tel" name="phone" required style="max-width: 100%;">
+        </div>
         <div class="form-group">
           <label>Additional Notes:</label>
           <input type="text" name="notes" style="max-width: 100%;">
         </div>
         <button type="submit" class="submit-btn">Submit Order</button>
       </div>
+
+      <!-- BOTTOM COLLAGE -->
+      <div class="scattered-collage">
+        <img src="images/IMG_8683.jpeg" alt="Journal cover 4">
+        <img src="images/Cover 1-1.jpeg" alt="Journal cover 3">
+        <img src="images/Cover2.jpeg" alt="Journal cover 2">
+        <img src="images/Cover1.jpeg" alt="Journal cover 1">
+      </div>
+
     </form>
-    
   </main>
 
   <footer>
-    © 2026 Belle's Hobbies. All rights reserved.
+    <p>&copy; 2026 Belle's Hobbies. All rights reserved.</p>
   </footer>
 </body>
 </html>
