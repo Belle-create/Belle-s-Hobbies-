@@ -26,6 +26,16 @@
     .scattered-collage img:nth-child(2) { left: 25%; top: 25px; transform: rotate(4deg); z-index: 1; }
     .scattered-collage img:nth-child(3) { left: 47%; top: 5px; transform: rotate(-3deg); z-index: 2; }
     .scattered-collage img:nth-child(4) { left: 67%; top: 20px; transform: rotate(7deg); z-index: 1; }
+    /* Cording colour swatches */
+    .swatch-group { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.4rem; }
+    .swatch-label { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; cursor: pointer; font-size: 0.78rem; font-weight: normal; }
+    .swatch-label input[type="radio"] { display: none; }
+    .swatch-circle { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #ccc; display: inline-block; transition: border-color 0.2s, transform 0.2s; }
+    .swatch-label input[type="radio"]:checked + .swatch-circle { border-color: #2c180f; border-width: 3px; transform: scale(1.15); }
+    .swatch-circle.black { background-color: #1a1a1a; }
+    .swatch-circle.white { background-color: #f5f5f5; border-color: #bbb; }
+    .swatch-circle.brown { background-color: #6b3a2a; }
+    .swatch-circle.red { background-color: #b22222; }
   </style>
 </head>
 <body>
@@ -33,7 +43,6 @@
     <h1>Belle's Hobbies</h1>
     <p>Louise-Carmen Inspired Journal Covers</p>
   </header>
-
   <main>
     <!-- Top scattered collage -->
     <div class="scattered-collage">
@@ -42,13 +51,10 @@
       <img src="images/3.jpg" alt="Journal cover sample 3">
       <img src="images/1.jpg" alt="Journal cover sample 4">
     </div>
-
     <h2>Order Your Custom Journal Cover</h2>
-
     <form action="https://formsubmit.co/info.bellehanumuthoo@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New Journal Cover Order">
       <input type="hidden" name="_captcha" value="false">
-
       <div class="gallery">
         <!-- B6 Journal Card -->
         <div class="journal-card">
@@ -66,6 +72,31 @@
             </select>
           </div>
           <div class="form-group">
+            <label>Cording Colour</label>
+            <div class="swatch-group">
+              <label class="swatch-label">
+                <input type="radio" name="b6_cording" value="Black">
+                <span class="swatch-circle black"></span>
+                Black
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="b6_cording" value="White">
+                <span class="swatch-circle white"></span>
+                White
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="b6_cording" value="Brown">
+                <span class="swatch-circle brown"></span>
+                Brown
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="b6_cording" value="Red">
+                <span class="swatch-circle red"></span>
+                Red
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
             <label>Add Charm? (+$3)</label>
             <select name="b6_charm">
               <option value="No">No</option>
@@ -73,7 +104,6 @@
             </select>
           </div>
         </div>
-
         <!-- A5 Journal Card -->
         <div class="journal-card">
           <h3>A5 Journal Cover</h3>
@@ -90,6 +120,31 @@
             </select>
           </div>
           <div class="form-group">
+            <label>Cording Colour</label>
+            <div class="swatch-group">
+              <label class="swatch-label">
+                <input type="radio" name="a5_cording" value="Black">
+                <span class="swatch-circle black"></span>
+                Black
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="a5_cording" value="White">
+                <span class="swatch-circle white"></span>
+                White
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="a5_cording" value="Brown">
+                <span class="swatch-circle brown"></span>
+                Brown
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="a5_cording" value="Red">
+                <span class="swatch-circle red"></span>
+                Red
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
             <label>Add Charm? (+$3)</label>
             <select name="a5_charm">
               <option value="No">No</option>
@@ -97,7 +152,6 @@
             </select>
           </div>
         </div>
-
         <!-- A7 Journal Card -->
         <div class="journal-card">
           <h3>A7 Journal Cover</h3>
@@ -114,6 +168,31 @@
             </select>
           </div>
           <div class="form-group">
+            <label>Cording Colour</label>
+            <div class="swatch-group">
+              <label class="swatch-label">
+                <input type="radio" name="a7_cording" value="Black">
+                <span class="swatch-circle black"></span>
+                Black
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="a7_cording" value="White">
+                <span class="swatch-circle white"></span>
+                White
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="a7_cording" value="Brown">
+                <span class="swatch-circle brown"></span>
+                Brown
+              </label>
+              <label class="swatch-label">
+                <input type="radio" name="a7_cording" value="Red">
+                <span class="swatch-circle red"></span>
+                Red
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
             <label>Add Charm? (+$3)</label>
             <select name="a7_charm">
               <option value="No">No</option>
@@ -122,7 +201,6 @@
           </div>
         </div>
       </div>
-
       <!-- Shared order details -->
       <div class="journal-card" style="margin-top: 2rem;">
         <h3>Your Details</h3>
@@ -152,7 +230,6 @@
         <button type="submit" class="submit-btn">Submit Order</button>
       </div>
     </form>
-
     <!-- Bottom scattered collage -->
     <div class="scattered-collage" style="margin-top: 3rem;">
       <img src="images/2.jpg" alt="Journal cover sample">
@@ -161,7 +238,6 @@
       <img src="images/2.jpg" alt="Journal cover sample">
     </div>
   </main>
-
   <footer>
     <p>&copy; 2025 Belle's Hobbies. All rights reserved.</p>
     <p>Contact: info.bellehanumuthoo@gmail.com</p>
